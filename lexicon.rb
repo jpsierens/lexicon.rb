@@ -9,7 +9,7 @@ module Lexicon
 
     WORDS.each do |token, token_list|
       token_list.each do |token_list_word|
-        return tuple = [token.to_s, word] if word == token_list_word
+        tuple = [token.to_s, word] if word == token_list_word
       end
       break unless tuple.nil?
     end

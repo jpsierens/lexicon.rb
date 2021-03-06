@@ -1,11 +1,19 @@
 module Lexicon
   WORDS = {
     'direction': %w[north south east west],
-    'verb': %w[go kill eat]
+    'verb': %w[go kill eat],
+    'stop': %w[the in of],
+    'noun': %w[bear princess],
   }.freeze
 
   def self.tuple_for(word)
     tuple = nil
+
+    begin
+      num = Integer(word)
+      return ['number', num]
+    rescue => exception
+    end
 
     WORDS.each do |token, token_list|
       token_list.each do |token_list_word|
